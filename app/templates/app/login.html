@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn{
+        background-color:lightblue;
+        padding:10px;
+        border-radius:10px;
+    }
+     .log{
+        background-color:#E9F1FA;
+        padding:30px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        height:100vh;
+    }
+    .in{
+        border:2px solid #ccc;
+        border-radius:10px;
+        padding:30px;
+        box-shadow:0 4px 8px rgba(0,0,0,0.1);
+        width:300px; 
+        background-color:lightyellow;                
+    }
+    
+</style>
+<body>
+    <div class="log">
+        <div class="in">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn">Log In</button>
+    </form>
+    <p>Don't have an account?<a href="{% url "register" %}">Register</a></p>
+    </div>
+    </div>
+</body>
+</html>
